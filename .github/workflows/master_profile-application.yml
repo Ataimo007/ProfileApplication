@@ -57,7 +57,7 @@ jobs:
           name: java-app
     
       - name: Display structure of downloaded files
-          run: ls -R
+        run: ls -R
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
