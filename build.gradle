@@ -41,9 +41,8 @@ azurewebapp {
 	}
 }
 
-tasks.jar {
-	enabled = true
-	archiveClassifier.set("")
+jar {
+	enabled = false
 }
 
 test {
