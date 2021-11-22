@@ -1,0 +1,46 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id "com.microsoft.azure.azurewebapp" version "1.2.0"
+//	id 'war'
+}
+
+group = 'com.godcodes'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:2.5.4'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.6'
+//	implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.5.4'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.6'
+    implementation 'org.jetbrains:annotations:22.0.0'
+//	runtimeOnly 'mysql:mysql-connector-java:8.0.25'
+	runtimeOnly 'org.postgresql:postgresql:42.3.1'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.6'
+	implementation 'com.google.code.gson:gson:2.8.9'
+}
+
+azurewebapp {
+	subscription = 'ddc6178a-9e0f-4c04-8897-772c53d4a59a'
+	resourceGroup = 'huawei-asseesment'
+	appName = 'profile-application-backup'
+	appServicePlanName = "asp-profile-application"
+	pricingTier = 'P1v2'
+	region = 'southafricanorth'
+	runtime {
+		os = 'Linux'
+		webContainer = 'Java SE'
+		javaVersion = 'Java 11'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
