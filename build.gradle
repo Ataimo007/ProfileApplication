@@ -41,6 +41,11 @@ azurewebapp {
 	}
 }
 
+tasks.jar {
+	enabled = true
+	archiveClassifier.set("")
+}
+
 test {
 	useJUnitPlatform()
 }
